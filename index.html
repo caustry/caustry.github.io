@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEM</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:wght@100;300;400;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel:wght@400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap');
+        
+        @font-face {
+            font-family: "HunDIN1451";
+            src: url("https://wisemysticalcup.ru/fonts/HunDIN1451.ttf");
+        }
+        
+        :root {
+            --bg_col: "#ffffff";
+            --text_col1: "#222222";
+            --h1_col1: "#000000";
+            --font: "Verdana";
+            user-select: none;
+        }
+
+        html {
+            color: var(--text_col1);
+            background: var(--bg_col);
+            margin-left: 7%;
+            margin-right: 7%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            font-family: var(--font);
+        }
+
+        h1 {
+            color: var(--h1_col1) !important;
+            margin-block-start: 0em;
+            margin-block-end: 0em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            font-weight: bold;
+        }
+        
+        div#ActualTemxtBlock {
+            float: left;
+            text-align: left;
+            padding: 3%;
+            z-index: 1;
+            margin: 0;
+            position: static;
+            display: grid;
+            max-width: 70%;
+            max-height: 999%;
+            top: 3rem;
+            left: 34434%;
+        }
+
+        img#MAINGUY {
+            width: 16rem; height: 16rem;  float: left; position: static;
+            padding: 3%;
+        }
+        
+        
+        b {
+          font-weight: 600;}
+
+    </style>
+
+</head>
+<body>
+    <img id="MAINGUY" src="file://Z:\Whoever opened Console Hello -w-">
+    <div id="ActualTemxtBlock"><h1 style="color: var(--h1_col1) !important;" id="ISEEYOU" title="a.k.a. rej, temslyd, temstar, dakota renner, empty rice, renssin, rence, and many other. Forget these. Refer to me as tem"><span id="randomgreeting"></span></h1><br>it's ok if you dont know me. i don't know myself as well!<br>i'm a person. im situaten in ulyanovsk, russia<br>at this point of time im 17<br>aaa<span title="Aroace Agender. I prefer They/Them but you can still use He/Him to refer to me!" style="opacity: 0.5; font-size: 0.5rem">(?)</span>
+    <br>this page automatically changes its colors according to the image on the left.<br>thank you for visiting this page!<br><span id="NOWLISTENING" title="Updates every second!">now listening... </span><br><a id="SUDDENLYCHANGESAHREF" href="https://linktr.ee/temslyd" style="color: var(--text_col1)">linktr.ee</a><br><span style="font-weight: 200; opacity: 0.4;"><i>rej.v<span id="1999ToyotaMarkIIX100">6</span><br><a href="archive.html" style="text-decoration: underline; color: var(--h1_col1)">archive</a></i></span></div>
+    <script>
+        //welcome to the script of this very page!
+        //i dont care if any of you loses your ability to see things after
+        //viewing the code of the script. im bad at coding and i will kill mysel fsoon
+        //if u gon hate on me, well , goo on, hate, i still hate myself more. maybne ill jump outta the window idk how to react -w-
+        let root = document.querySelector(":root")
+        let fontsArray = ["Inter", "Lato", "Open Sans", "Work Sans", "Archivo Black", "Cinzel", "Orbitron", "Unbounded", "HunDIN1451"]
+        let greetArray = ["helo!im tem", "Hi. I am Tem", "hhoe4rnhbhehellooho im  mtmetmeeememm", "Just Kill yourself Already. Im not talking to the Visitor of this Page, Im talking to myself", "POWERTENSHI WAS HERE", "I See You"]
+        let GREET = Math.floor(Math.random()*greetArray.length)
+        const ThemeArrLen = 7
+        let QMarkIndex = undefined
+        let setTheme = undefined
+        if((`${window.location}`).includes("?")) {
+            QMarkIndex = (`${window.location}`).indexOf("?")
+            console.log((`${window.location}`).slice(QMarkIndex+1, (`${window.location}`).indexOf("=")))
+            switch ((`${window.location}`).slice(QMarkIndex+1, (`${window.location}`).indexOf("="))) {
+                case "theme":
+                    let ThemNum = (parseInt((`${window.location}`).slice((`${window.location}`).indexOf("=")+1, window.location.length)))
+                    if (ThemNum>0&&ThemNum<=ThemeArrLen) {
+                        setTheme = parseInt((`${window.location}`).slice((`${window.location}`).indexOf("=")+1, window.location.length))
+                    } else
+                    {
+                        setTheme = Math.ceil(Math.random()*ThemeArrLen)
+                    }
+
+                    //
+                    document.getElementById("randomgreeting").innerHTML = greetArray[GREET]
+                    break
+                case "greet":
+                    document.getElementById("randomgreeting").innerHTML = (`${window.location}`).slice((`${window.location}`).indexOf('=')+1, window.location.length)
+                    //
+                    setTheme = Math.ceil(Math.random()*ThemeArrLen)
+                    break
+                default:
+                    setTheme = Math.ceil(Math.random()*ThemeArrLen)
+                    document.getElementById("randomgreeting").innerHTML = greetArray[GREET]
+
+            }
+        }
+
+        //to make sure
+        if(QMarkIndex == undefined) {
+            setTheme = Math.ceil(Math.random()*ThemeArrLen)
+            document.getElementById("randomgreeting").innerHTML = greetArray[GREET]
+        }
+
+        if(QMarkIndex!=undefined) {
+        }
+
+        console.log("QMarkIndex = ", QMarkIndex)
+
+        function generateColorCode(str, bool) {
+            colorCode = "#"
+                for(let i = 0; i < 6; i++) {
+                    colorCode += ""+("0123456789ABCDEF")[Math.round(Math.random()*15)]
+                }
+                    if(bool){
+                        console.log(str+": "+colorCode)
+                    }
+            return colorCode
+        }
+        //^^^ pasted from v5
+        document.getElementById("1999ToyotaMarkIIX100").onpointerover = () => {
+            let doc = document.getElementById("1999ToyotaMarkIIX100")
+            doc.style.color = generateColorCode("1999ToyotaMarkIIX100", false)
+            doc.style.backgroundColor = generateColorCode("1999ToyotaMarkIIX1002", false)
+        }
+
+        document.getElementById("1999ToyotaMarkIIX100").onpointerleave = () => {
+            let doc = document.getElementById("1999ToyotaMarkIIX100")
+            doc.style.color = "var(--text_col1)"
+            doc.style.backgroundColor = "var(--bg_col)"
+        }
+        let Themes = {
+            [1]: {
+                font: "HunDIN1451",
+                h1_col: "#d1453b",
+                text_col1: "#fefffa",
+                bg_col: "#000000",
+                imgurl: "https://rej.neocities.org/NVIDIA_Share_UVWb3ialG3.png"
+            },
+
+            [2]: {
+                font: "Lato",
+                h1_col: "#c798a1",
+                text_col1: "#fef9fa",
+                bg_col: "#45443f",
+                imgurl: "https://rej.neocities.org/photo_2023-12-18_21-18-49.jpg"
+            },
+
+            [3]: {
+                font: "Work Sans",
+                h1_col: "#78100f",
+                text_col1: "#0e0e0e",
+                bg_col: "#fdfdfc",
+                imgurl: "https://rej.neocities.org/photo_2023-12-23_22-27-01.jpg"
+            },
+
+            [4]: {
+                font: "any",
+                h1_col: "#566b8e",
+                text_col1: "#392e28",
+                bg_col: "#746748",
+                imgurl: "https://rej.neocities.org/photo_2023-12-23_22-28-05.jpg"
+            },
+
+            [5]: {
+                font: "Unbounded",
+                h1_col: "#2b2503",
+                text_col1: "#929176",
+                bg_col: "#fffada",
+                imgurl: "https://rej.neocities.org/photo_2023-12-23_22-32-43.jpg"
+            },
+
+            [6]: {
+                font: "Open Sans",
+                h1_col: "#191b19",
+                text_col1: "#45372d",
+                bg_col: "#39a3d3",
+                imgurl: "https://rej.neocities.org/photo_2023-12-23_22-32-47.jpg"
+            },
+
+            [7]: {
+                font: "Open Sans",
+                h1_col: "#231e1a",
+                text_col1: "#231e1a",
+                bg_col: "#e1bda3",
+                imgurl: "https://rej.neocities.org/DSC01094.JPG"
+            }
+        }
+
+
+        if(setTheme == 5) 
+        {
+            document.getElementById("SUDDENLYCHANGESAHREF").innerHTML = `<a id="SUDDENLYCHANGESAHREF" href="https://x.com/temslyd" style="color: var(--text_col1)">x</a>`
+        }
+
+        console.log(setTheme)
+        let lmao = Themes[setTheme]
+        switch(lmao['font']) {
+            default:
+                root.style.setProperty('--bg_col', lmao['bg_col'])
+                root.style.setProperty('--text_col1', lmao['text_col1'])
+                root.style.setProperty('--h1_col', lmao['h1_col'])
+                root.style.setProperty('--font', lmao['font'])
+                document.getElementById("MAINGUY").src = lmao['imgurl']
+                break
+            case "any":
+                root.style.setProperty('--bg_col', lmao['bg_col'])
+                root.style.setProperty('--text_col1', lmao['text_col1'])
+                root.style.setProperty('--h1_col', lmao['h1_col'])
+                root.style.setProperty('--font', fontsArray[Math.floor(Math.random()*fontsArray.length)])
+                document.getElementById("MAINGUY").src = lmao['imgurl']
+                break
+        }
+
+        if((Themes[setTheme]['font']=="Cintel")&&(GREET==5)) {
+            console.log("i See You, Triggered")
+            document.getElementById("ISEEYOU").style.color = "red !important"
+        }
+
+        let lfurl = "https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=TEMSLYD&api_key=d52a5ae30a11b14d439ef9b582e84229&format=json"
+        // Maybe Leaving my Key Here Wasnt the BEst Idea
+        console.log("HELLO!!!\nGREET:",GREET,"\nTHEME:",setTheme)
+        setInterval(() => {
+            fetch(lfurl).then(function(response) {
+        return response.json()
+        }).then(function(data) {
+        if (data["recenttracks"]["track"][0]["@attr"]["nowplaying"]) {
+            document.getElementById("NOWLISTENING").innerHTML = "now listening to <b>" + data["recenttracks"]["track"][0]["name"] + "</b> by <b>" + data["recenttracks"]["track"][0]["artist"]["#text"] + "</b>"
+        }
+        }).catch(function(err) {
+            if(err=="TypeError: Cannot read properties of undefined (reading 'nowplaying')"){
+                console.log("Its Normal. Im not listening to anything rn")
+                    document.getElementById("NOWLISTENING").innerHTML = "not listening to anything right now (based on last.fm)"
+            }
+                else{
+                    document.getElementById("NOWLISTENING").innerHTML = `Im probably listening to something right now, but i cant tell since ${err}`
+            }
+        })
+        }, 1000)
+        //I Stole the Fetch Get Api Type Ass Shit Code Snippet but I Understand how it Works. Marisa kirisame
+
+        // I Also Wanted to Integrate "WHat Im Watching Rn" but Im Afraid of Leaking the Access to my You Tube Account
+    </script>
+
+</body>
+</html>
